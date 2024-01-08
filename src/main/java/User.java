@@ -1,4 +1,5 @@
 public class User {
+    private int id;
     private String firstname;
     private String lastname;
     private String username;
@@ -8,11 +9,20 @@ public class User {
 
     }
 
-    public User(String firstname, String lastname, String username, String password) {
+    public User(int id, String firstname, String lastname, String username, String password) {
+        this.id = id;
         this.firstname = firstname;
         this.lastname = lastname;
         this.username = username;
         this.password = password;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getFirstname() {
@@ -46,11 +56,11 @@ public class User {
     public void setPassword(String password) {
         this.password = password;
     }
-
     @Override
     public String toString() {
         return "User{" +
-                "firstname='" + firstname + '\'' +
+                "id=" + id +
+                ", firstname='" + firstname + '\'' +
                 ", lastname='" + lastname + '\'' +
                 ", username='" + username + '\'' +
                 ", password='" + password + '\'' +
