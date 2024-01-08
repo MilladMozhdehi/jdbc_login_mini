@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class Menu {
 
-    Scanner scanner = new Scanner(System.in);
+    private final Scanner scanner = new Scanner(System.in);
     public void publicMenu(){
         System.out.println("1-SIGN UP");
         System.out.println("2-SIGN IN");
@@ -11,6 +11,6 @@ public class Menu {
 
         int number = scanner.nextInt();
         scanner.nextLine();
-        System.out.println();
+        System.out.println(number);
     }
 }
