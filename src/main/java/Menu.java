@@ -3,6 +3,7 @@ import java.util.Scanner;
 public class Menu {
 
     private final Scanner scanner = new Scanner(System.in);
+    private final UserService userService = new UserService();
     public void publicMenu(){
         System.out.println("1-SIGN UP");
         System.out.println("2-SIGN IN");
@@ -11,6 +12,15 @@ public class Menu {
 
         int number = scanner.nextInt();
         scanner.nextLine();
-        System.out.println(number);
+
+        switch (number){
+            case 1 -> signUp();
+            case 2 -> System.out.println("Sign in");
+            case 3 -> System.out.println("Exist");
+        }
+
+    }
+    public void signUp(){
+        userService.signUp();
     }
 }

@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class UserService {
     private final Scanner scanner = new Scanner(System.in);
-    public boolean signUp(){
+    public void signUp(){
 
         System.out.print("Please Enter your firstname: ");
         String firstname = scanner.nextLine();
@@ -15,6 +15,9 @@ public class UserService {
 
         System.out.print("Please Enter your password: ");
         String password = scanner.nextLine();
+
+        User user = new User(firstname, lastname, username,password);
+        System.out.println(user);
     }
 
 }
