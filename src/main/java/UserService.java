@@ -1,8 +1,14 @@
+import java.sql.SQLException;
 import java.util.Scanner;
 
 public class UserService {
     private final Scanner scanner = new Scanner(System.in);
-    public void signUp(){
+    private final UserRepository userRepository = new UserRepository();
+
+    public UserService() throws SQLException {
+    }
+
+    public void signUp() throws SQLException {
 
         System.out.print("Please Enter your firstname: ");
         String firstname = scanner.nextLine();
@@ -17,7 +23,11 @@ public class UserService {
         String password = scanner.nextLine();
 
         User user = new User(firstname, lastname, username,password);
-        System.out.println(user);
+        int result = userRepository.registerUser(user);
+        if (result == 1)
+            System.out.println(firstname + "you successfully register :");
+        else
+            System.out.println("something is wrong :");
     }
 
 }
